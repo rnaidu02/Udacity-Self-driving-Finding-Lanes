@@ -16,6 +16,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/image_with_g_blur.png "Grayscale"
+
 [image2]: ./examples/image_with_g_blur.png "Grayscale image after Gaussian Blur“
 
 ---
