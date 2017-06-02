@@ -13,12 +13,6 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/image_with_g_blur.png "Grayscale"
-
-[image2]: ./examples/image_with_g_blur.png "Grayscale image after Gaussian Blur“
-
 ---
 
 ### Reflection
@@ -34,9 +28,11 @@ Here is the image after Applying Gaussian Blur on the image shown before.
 ![GrayScale & Smoothening applied](./examples/image_with_g_blur.png)
 
 As a second step in the process I have applied Canny Edge detection on the image that resulted from the above step. Here I have given the threshold ranges of 50  to 150 for the edge graidients to be detected. Here is the resulting image that shows only the detected edges in white color and the rest if black.
+
 ![Image after Canny edge detection](./examples/image_with_canny_edges.png)
 
 In the above image the edges are detected only in certain part of the image. The third step in my pipeline is to find the area of interest for further processing. In this case of the image of the road, I approximated this to be a trapezoid shape with edges along the road.Here is the image after the area of interest applied on the canny edge detected image.
+
 ![Image with mask applied](./examples/image_with_hough_lines.png)
 
 Here comes the important step in the pipeline that identifes the road segments and constructs the missing road segments. This fourth step involves passing the above image to HoughLines algorithm to find the lines that are identifed from the edges detected in before step. To get this the following arguments are supplied - rho:1, theta:pi/180, threshold:10, nim_length:10, max_line_gap:2. This step return bunch of lines with x and y co-ordinates. 
@@ -52,6 +48,9 @@ However some of the lanes on the road are partly painted and that resulted in br
    
 
 As a last step in the pipeline, I have combined the original image and the houghlines formed in the step before to create an image the shows the lane marking with color RED super imposed on the image.
+
+Resulting test output images https://github.com/rnaidu02/Udacity-Self-driving-Finding-Lanes/tree/master/test_images
+Resulting test output videos https://github.com/rnaidu02/Udacity-Self-driving-Finding-Lanes/tree/master/test_videos
 
 
 ### 2. Identify potential shortcomings with your current pipeline
